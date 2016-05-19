@@ -1,6 +1,7 @@
 package com.rbc.shopping.visitor;
 
 import com.rbc.shopping.item.FruitItem;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -14,6 +15,11 @@ import static org.hamcrest.Matchers.is;
 public class ShoppingCartVisitorImplTest {
 
     private ShoppingCartVisitor shoppingCartVisitor;
+
+    @Before
+    public void setUp() {
+        shoppingCartVisitor = new ShoppingCartVisitorImpl();
+    }
 
     @Test
     public void testVisit() {

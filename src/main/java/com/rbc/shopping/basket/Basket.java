@@ -27,6 +27,10 @@ public class Basket implements IBasket {
 
     @Override
     public void remove(final String itemName) {
+        if (itemName == null || itemName.isEmpty()) {
+            throw new IllegalStateException("Item name must be non empty.");
+        }
+
         for (IGenericItem item : cart) {
             if (itemName.equals(item.getName())) {
                 cart.remove(item);
